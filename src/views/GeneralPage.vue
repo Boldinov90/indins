@@ -1,19 +1,25 @@
 <template>
    <div>
-      xfghdfghdfghfg
+      <PostsLists />
    </div>
 </template>
 
 <script>
-   export default {
-      name: 'GeneralPage',
-      computed: {
+import PostsLists from '@/components/PostsLists.vue';
 
-      },
-      methods: {
-         
-      },
-   }
+
+export default {
+   components: {
+      PostsLists
+   },
+   name: 'GeneralPage',
+   computed: {
+
+   },
+   methods: {
+      
+   },
+}
 </script>
 
 <style lang="scss" scoped>

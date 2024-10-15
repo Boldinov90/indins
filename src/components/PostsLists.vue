@@ -1,21 +1,27 @@
 <template>
-   <div>
-
+   <div class="posts-list" v-for="post in POSTS" :key="post.id">
+      <PostItem :task="post" @postFromItem="postFromItem" />
    </div>
 </template>
 
 <script>
-   export default {
-      name: "index",
-      data() {
-         return {
-            
-         }
+import { mapGetters } from 'vuex'
+import PostItem from '@/components/PostsLists.vue'
+
+export default {
+   components: {
+      PostItem,
+   },
+   methods: {
+      // Передача родительскому компоненту текста из задачи
+      postFromItem(postFromItem) {
+         this.$emit('postFromItem', postFromItem)
       },
-      methods: {
-         
-      }
+   },
+   computed: {
+      ...mapGetters(['POSTS']),
    }
+}
 </script>
 
 <style lang="scss" scoped>

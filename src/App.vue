@@ -6,6 +6,18 @@
   <router-view/>
 </template>
 
+<script>
+import { mapActions } from 'vuex'
+export default {
+   methods: {
+      ...mapActions(['GET_POSTS']),
+   },
+   beforeMount() {
+      this.GET_POSTS()
+   },
+}
+</script>
+
 <style lang="scss">
 #app {
    font-family: Avenir, Helvetica, Arial, sans-serif;
