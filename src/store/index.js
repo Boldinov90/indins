@@ -6,7 +6,7 @@ export default createStore({
    },
    getters: {
       DATA(state) {
-          return state.data
+         return state.data
       }
    },
    mutations: {
