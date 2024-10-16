@@ -1,24 +1,26 @@
 import { createStore } from 'vuex'
+import axios from 'axios'
 
 export default createStore({
    state: {
-      data: []
-   },
-   getters: {
-      DATA(state) {
-         return state.data
-      }
+      posts: [],
    },
    mutations: {
-      GET_DATA(state, response) {
-         state.tasks = response.data
+      GET_ALL_POSTS(state, responsible) {
+         state.posts = responsible.data
+         // console.log(state.posts)
       }
    },
    actions: {
-      async GET_DATA({ commit }) {
-         const response = await axios.get('http://localhost:3000/tasks')
-         commit('GET_DATA', response)
-         return response
+      async GET_ALL_POSTS({ commit }) {
+         const responsible = await axios.get('http://localhost:3000/posts')
+         commit('GET_ALL_POSTS', responsible)
+         return responsible
       },
+   },
+   getters: {
+      POSTS(state) {
+         return state.posts
+      }
    },
 })

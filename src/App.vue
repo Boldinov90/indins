@@ -7,13 +7,16 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
+   computed: {
+      // ...mapGetters(['POSTS']),
+   },
    methods: {
-      ...mapActions(['GET_POSTS']),
+      ...mapActions(['GET_ALL_POSTS']),
    },
    beforeMount() {
-      this.GET_POSTS()
+      this.GET_ALL_POSTS()
    },
 }
 </script>
