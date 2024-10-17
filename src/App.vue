@@ -1,22 +1,26 @@
 <template>
   <nav>
-    <router-link to="/">General</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link to="/">ВАРИАНТ 1</router-link>
+    <router-link to="/description">РЕАЛИЗАЦИЯ</router-link>
   </nav>
   <router-view/>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+
 export default {
    computed: {
-      // ...mapGetters(['POSTS']),
+      ...mapGetters(['LENGTH_ARRAY', 'QUANTITY_POSTS']),
    },
    methods: {
-      ...mapActions(['GET_ALL_POSTS']),
+      ...mapActions(['GET_POSTS', 'GET_LENGTH_ARRAY', 'INCREMENT_QUANTITY_POSTS']),
    },
    beforeMount() {
-      this.GET_ALL_POSTS()
+      this.GET_LENGTH_ARRAY().then(() => {
+         this.INCREMENT_QUANTITY_POSTS()
+         this.GET_POSTS(this.QUANTITY_POSTS)
+      })
    },
 }
 </script>
@@ -26,8 +30,11 @@ export default {
    font-family: Avenir, Helvetica, Arial, sans-serif;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   text-align: center;
-   color: #3d4349;
+   max-width: 1100px;
+   padding: 0 20px;
+   margin: 0 auto;
+   position: relative;
+   transition: 0.3s;
    }
 
    nav {
@@ -39,11 +46,10 @@ export default {
       text-decoration: none;
       margin-left: 20px;
       margin-right: 20px;
-      font-size: 10px;
+      font-size: 15px;
       transition-duration: 0.3s;
       &.router-link-exact-active {
-         color: #eda916;
-         font-size: 15px;
+         color: #e99f00;
       }
    }
 }

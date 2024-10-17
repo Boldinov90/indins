@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import GeneralPage from '@/views/GeneralPage.vue'
-import AboutPage from '@/views/AboutPage.vue'
+import VariantOnePage from '@/views/VariantOnePage.vue'
+import DescriptionPage from '@/views/DescriptionPage.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'general-page',
-    component: GeneralPage
+    name: 'variant-one-page',
+    component: VariantOnePage
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutPage
+    path: '/description',
+    name: 'description',
+    component: DescriptionPage
   },
 ]
 
