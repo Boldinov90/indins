@@ -1,19 +1,17 @@
 # indins
 
-## Project setup
+## Установка необходимых для работы пакетов
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
+<!-- ### Compiles and hot-reloads for development -->
+### Запуск проекта (одновременный запуск проекта и json-server(а))   
 ```
-npm run serve
+npm run start
 ```
-
 ### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+

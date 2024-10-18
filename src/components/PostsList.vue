@@ -1,7 +1,7 @@
 <template>
    <div class="posts-list" v-if="!IS_LOADING">
       <div v-for="post in POSTS" :key="post.id">
-         <PostItem :post="post" />
+         <PostItem :post="post" :contentPostTones="post.contentPostTones" />
       </div>
    </div>
    <div class="posts-loading">
@@ -12,7 +12,6 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import PostItem from './PostItem.vue'
-
 
 export default {
    components: {
