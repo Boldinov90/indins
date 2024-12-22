@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/">ВАРИАНТ 1</router-link>
-    <router-link to="/description">РЕАЛИЗАЦИЯ</router-link>
+    <router-link to="/description">РЕАЛИЗАЦИЯ</router-link> 
   </nav>
   <router-view/>
 </template>
